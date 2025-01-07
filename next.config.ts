@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  env: {
+    STRAPI_API_URL: process.env.STRAPI_API_URL || 'http://localhost:1337',
+  },
+  reactStrictMode: true,
+  images: {
+    domains: ['localhost'], // Thêm localhost vào danh sách cho phép
+  },
 };
 
 export default nextConfig;
